@@ -13,8 +13,10 @@ public class GameManager : MonoBehaviour
     public GameObject coin;
 
     public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI livesText;
 
     private int score;
+    private int lives;
 
     // Start is called before the first frame update
     void Start()
@@ -53,5 +55,10 @@ public class GameManager : MonoBehaviour
     {
         score = score + newScore;
         scoreText.text = "Score: " + score;
+    }
+
+    public void updateLives(int lives)
+    {
+        livesText.text = "Lives: " + lives;
     }
 }

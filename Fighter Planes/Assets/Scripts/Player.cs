@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
     private float horizontalScreenSize = 11.5f;
     private float verticalScreenSize = 7.5f;
     private float speed;
-    private int lives;
+    public int lives;
 
     public GameObject bullet;
 
@@ -19,6 +19,7 @@ public class Player : MonoBehaviour
     {
         speed = 6f;
         lives = 3;
+        GameObject.Find("GameManager").GetComponent<GameManager>().updateLives(lives);
     }
 
     // Update is called once per frame
@@ -54,6 +55,7 @@ public class Player : MonoBehaviour
     public void LoseALife()
     {
         lives--;
+        GameObject.Find("GameManager").GetComponent<GameManager>().updateLives(lives);
         //lives -= 1;
         //lives = lives - 1;
         if (lives == 0)
